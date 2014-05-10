@@ -1,0 +1,11 @@
+{
+    "autoload": {
+        "psr-0": {
+            "SEEQMGMD": "src"
+        }
+    },
+    "require": {
+        "monolog/monolog": "1.9.*@dev",
+        "react/zmq": "0.2.*"
+    }
+}
