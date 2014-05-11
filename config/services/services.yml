@@ -1,0 +1,13 @@
+parameters:
+    # ...
+
+services:
+    logger:
+        class: SEEQMGMD\Log\Logger
+        arguments:
+            - %appDir%/logs
+
+    messenger:
+        class: SEEQMGMD\Messenger
+        arguments:
+            - @logger

@@ -6,6 +6,9 @@
     },
     "require": {
         "monolog/monolog": "1.9.*@dev",
-        "react/zmq": "0.2.*"
+        "react/zmq": "0.2.*",
+        "symfony/yaml": "2.5.*@dev",
+        "symfony/config": "2.5.*@dev",
+        "symfony/dependency-injection": "2.5.*@dev"
     }
 }

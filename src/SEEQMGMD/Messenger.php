@@ -2,10 +2,22 @@
 
 namespace SEEQMGMD;
 
+use SEEQMGMD\Log\Logger;
+
 class Messenger
 {
-    static public function send($msg)
+    /**
+     * @var SEEQMGMD\Log\Logger
+     */
+    private $logger;
+
+    public function __construct(Logger $logger)
     {
-        printf('Received message %s', $msg);
+        $this->logger = $logger;
+    }
+
+    public function send($msg)
+    {
+        $this->logger->info(sprintf('received message %s', $msg));
     }
 }
