@@ -23,9 +23,9 @@ $context = new Context($loop);
 $responder = $context->getSocket(\ZMQ::SOCKET_REP);
 $responder->bind(sprintf('tcp://*:%s', $container->getParameter('listeningPort')));
 
-$messenger = $container->get('messenger');
-$responder->on('message', function ($msg) use ($responder, $messenger) {
-    $responder->send($messenger->send($msg));
+$dispatcher = $container->get('dispatcher');
+$responder->on('message', function ($msg) use ($responder, $dispatcher) {
+    $responder->send($dispatcher->dispatch(json_decode($msg, true)));
 });
 
 $loop->run();

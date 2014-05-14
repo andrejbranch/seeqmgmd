@@ -7,7 +7,16 @@ services:
         arguments:
             - %appDir%/logs
 
-    messenger:
-        class: SEEQMGMD\Messenger
+    dispatcher:
+        class: SEEQMGMD\Dispatcher
         arguments:
+            - @service_container
+
+    controller:
+        class: SEEQMGMD\Controller
+        arguments:
+            - @service_container
             - @logger
+
+    status_manager:
+        class: SEEQMGMD\Service\StatusManager
